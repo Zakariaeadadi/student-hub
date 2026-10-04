@@ -22,7 +22,7 @@
 ## 🛠️ Stack technique
 
 **Backend**
-- Java 21 / Spring Boot 3
+- Java 21 / Spring Boot 4.1.1
 - Spring Security + JWT
 - Spring Data JPA / Hibernate
 - MySQL 8 (via Docker) — H2 disponible pour un démarrage rapide sans dépendance externe

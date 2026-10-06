@@ -5,6 +5,7 @@ import { useAuth } from "../context/AuthContext";
 import { addFavorite, removeFavorite } from "../api/favoriteApi";
 import { addReview, getReviewsByPost } from "../api/reviewApi";
 import { getErrorMessage } from '../utils/errorUtils';
+import { getTimeAgo } from "../utils/dateUtils";
 
 // ICONS
 import { Phone, Mail, Pencil, Trash2, Heart } from 'lucide-react';
@@ -156,6 +157,9 @@ function PostDetailPage() {
                     <h3 className="mt-5 text-2xl font-semibold text-slate-900 sm:text-3xl">{post.title}</h3>
                     <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">{post.description}</p>
                     <p className="mt-5 text-xl font-semibold text-indigo-600">{post.price} MAD</p>
+                    <p className="mt-2 text-xs text-slate-400">
+                        {getTimeAgo(post.createdAt)}
+                    </p>
 
                     {/* Infos vendeur */}
                     <div className="mt-6 space-y-1.5 border-t border-slate-100 pt-5 text-sm text-slate-500">
@@ -307,7 +311,7 @@ function PostDetailPage() {
                                         <p className="mt-2 text-sm text-slate-600">{rate.comment}</p>
                                     )}
                                     <p className="mt-3 text-xs text-slate-400">
-                                        {new Date(rate.createdAt).toLocaleDateString()}
+                                        {getTimeAgo(rate.createdAt)}
                                     </p>
                                 </div>
                             ))}

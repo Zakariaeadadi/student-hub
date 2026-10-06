@@ -99,15 +99,30 @@ function MyPostsPage() {
 
                 {/* Carte info utilisateur */}
                 <div className="mb-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                    <p className="text-sm font-medium uppercase tracking-wide text-indigo-600">Mon profil</p>
-                    <h2 className="mt-1 text-xl font-semibold text-slate-900">{user?.fullName}</h2>
-                    <p className="mt-1 text-sm text-slate-500">{user?.email}</p>
-                    <p className="mt-1 text-sm text-slate-500">{user?.phone}</p>
-                    <button 
-                        className="inline-flex items-center gap-2 rounded-xl border border-red-200 bg-white px-4 py-2.5 text-sm font-medium text-red-700 transition hover:bg-red-50"                        onClick={() => setShowDeleteConfirm(true)}
+                    <p className="text-sm font-medium uppercase tracking-wide text-indigo-600">
+                        Mon profil
+                    </p>
+
+                    <h2 className="mt-1 text-xl font-semibold text-slate-900">
+                        {user?.fullName}
+                    </h2>
+
+                    <div className="mt-3 space-y-1">
+                        <p className="text-sm text-slate-500">
+                            Email : {user?.email}
+                        </p>
+
+                        <p className="text-sm text-slate-500">
+                            Téléphone : {user?.phone}
+                        </p>
+                    </div>
+
+                    <button
+                        className="mt-5 inline-flex items-center gap-2 rounded-xl border border-red-200 bg-white px-4 py-2.5 text-sm font-medium text-red-700 transition hover:bg-red-50"
+                        onClick={() => setShowDeleteConfirm(true)}
                     >
                         <Trash2 className="h-4 w-4" />
-                        Supprimer Votre compte
+                        Supprimer votre compte
                     </button>
                 </div>
 

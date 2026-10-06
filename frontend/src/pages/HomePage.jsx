@@ -3,6 +3,7 @@ import { getAllPosts } from '../api/postApi';
 import { getAllCategories } from '../api/categoryApi'
 import { Link } from "react-router-dom";
 import { getErrorMessage } from '../utils/errorUtils';
+import { getTimeAgo } from "../utils/dateUtils";
 
 
 function HomePage() {
@@ -53,6 +54,7 @@ function HomePage() {
         }, 400);
         return () => clearTimeout(timer);
     }, [search]);
+
 
 
     if (loading) return (
@@ -150,6 +152,9 @@ function HomePage() {
                             >
                                 Voir le détail
                             </Link>
+                            <span className="mt-2 text-xs text-slate-400">
+                                {getTimeAgo(post.createdAt)}
+                            </span>
                         </div>
                     ))}
                 </div>

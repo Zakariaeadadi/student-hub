@@ -54,7 +54,7 @@ function PostDetailPage() {
         setError(null);
         try {
             await deletePost(post.id);
-            navigate("/");
+            navigate("/posts/my/");
         } catch (err) {
             setError(getErrorMessage(err, "Erreur lors de la suppression de ce post."));
         }
